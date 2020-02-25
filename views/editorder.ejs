@@ -1,0 +1,101 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>Checkout example for Bootstrap</title>
+
+    
+
+    <!-- Bootstrap core CSS -->
+    <link href="/public/stylesheets/bootstrap.min.css" rel="stylesheet">
+
+   
+  </head>
+
+  <body class="bg-light">
+
+    <div class="container">
+      <div class="py-5 text-center">
+        
+        <h2>Edit Order</h2>
+              </div>
+
+      <div class="row">
+        
+          
+
+          
+        <div class="col-md-12 order-md-1">
+          
+          <form class="needs-validation" novalidate method="POST" action="/edit/<%= data[0].orderNo%>">
+            <div class="row">
+                
+              <div class="col-md-6 mb-3">
+                <label for="orderNo"></label>
+                <input type="text" class="form-control" id="orderNo" name="id"placeholder="" value="<%= data[0].orderNo%>" disabled required>
+                <div class="invalid-feedback">
+                  Valid Order No is required.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="lastName">Placed by</label>
+                <input type="text" class="form-control" id="placedBy" name="name" placeholder="" value="<%= data[0].placedBy%>" required>
+                <div class="invalid-feedback">
+                  Valid  name is required.
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="username">Phone</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  
+                </div>
+                <input type="text" class="form-control" id="username" name="phone" value="<%= data[0].phone%>"placeholder="Phone Number" >
+                <div class="invalid-feedback" style="width: 100%;">
+                  Your phone is required.
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email">Email <span class="text-muted"></span></label>
+              <input type="email" class="form-control" name="email" id="email" value ="<%= data[0].email%>"required placeholder=""">
+              <div class="invalid-feedback">
+                Please enter a valid email address for shipping updates.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="title">Item</label>
+              <input type="text" class="form-control" id="title" name="title" placeholder="" value="<%= data[0].title%>" required>
+              <div class="invalid-feedback">
+                Please title is wrong.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="address2">Price <span class="text-muted"></span></label>
+              <input type="text" class="form-control" name="price" id="address2" value="<%= data[0].price%>" placeholder="Apartment or suite">
+            </div>
+
+           
+            <hr class="mb-4">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+
+     
+    </div>
+
+   
+  </body>
+</html>

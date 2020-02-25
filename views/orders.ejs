@@ -1,0 +1,63 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>Orders List</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/pricing/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="/public/stylesheets/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    
+  </head>
+
+  <body>
+
+    
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-4">Orders</h1>
+      <p class="lead"></p>
+    </div>
+
+    <div class="container">
+      <div class="card-deck mb-3 text-center">
+        
+        <% for(var i=0; i < data.length; i++) { %>
+
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal"><%= data[i].title%></h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title"><%= data[i].price %> <small class="text-muted"></small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li><b>Placed by: </b><%= data[i].placedBy %></li>
+              <li><b>Email: </b><%= data[i].email %></li>
+              <li><b>Phone Num </b><%= data[i].phone %></li>
+              <li><b>Order No </b><%= data[i].orderNo %></li>
+            </ul>
+            <button type="button" onclick="window.location.href = '/edit/<%=data[i].orderNo%>'"class="btn btn-lg btn-block btn-primary">Edit</button>
+          </div>
+        </div>
+        <% } %>
+        
+      </div>
+
+      
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+  </body>
+</html>
